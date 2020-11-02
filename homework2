@@ -1,0 +1,97 @@
+➜  GL-BaseCamp-2020-Nesterov git:(main) git checkout -b branch1
+Switched to a new branch 'branch1'
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) touch modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git add .
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git commit -m 'create modified-file'
+[branch1 48b3b2a] create modified-file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) git checkout -b branch2
+Switched to a new branch 'branch2'
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) git status
+On branch branch2
+nothing to commit, working tree clean
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) nano modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) ✗ git status
+On branch branch2
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   modified
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) ✗ git add .
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) ✗ git commit -m 'some changes in modified'
+[branch2 00bfec9] some changes in modified
+ 1 file changed, 1 insertion(+)
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) git checkout branch1
+Switched to branch 'branch1'
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) git status
+On branch branch1
+nothing to commit, working tree clean
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) nano modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git merge branch2
+Updating 48b3b2a..00bfec9
+error: Your local changes to the following files would be overwritten by merge:
+	modified
+Please commit your changes or stash them before you merge.
+Aborting
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git status
+On branch branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   modified
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git add .
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git commit -m 'some chenges from branch1'
+[branch1 f7411b5] some chenges from branch1
+ 1 file changed, 1 insertion(+)
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) git merge branch2
+Auto-merging modified
+CONFLICT (content): Merge conflict in modified
+Automatic merge failed; fix conflicts and then commit the result.
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ nano modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ gitstatus
+zsh: command not found: gitstatus
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git status
+On branch branch1
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+	both modified:   modified
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git add .
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git status
+On branch branch1
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+	modified:   modified
+
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) ✗ git commit -m 'resolved merge-conflict'
+[branch1 4b665b3] resolved merge-conflict
+➜  GL-BaseCamp-2020-Nesterov git:(branch1) git checkout branch2
+Switched to branch 'branch2'
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) git status
+On branch branch2
+nothing to commit, working tree clean
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) nano modified
+➜  GL-BaseCamp-2020-Nesterov git:(branch2) git checkout -b  hw2
+Switched to a new branch 'hw2'
+➜  GL-BaseCamp-2020-Nesterov git:(hw2) git status
+On branch hw2
+nothing to commit, working tree clean
+➜  GL-BaseCamp-2020-Nesterov git:(hw2) touch homework2
+➜  GL-BaseCamp-2020-Nesterov git:(hw2) ✗ git merge branch1
+Updating 00bfec9..4b665b3
+Fast-forward
+ modified | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+➜  GL-BaseCamp-2020-Nesterov git:(hw2) ✗ 
