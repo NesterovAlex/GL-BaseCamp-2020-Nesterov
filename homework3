@@ -1,0 +1,265 @@
+  aleksandr@aleksandr-VirtualBox  ~/Desktop  cd ~
+ aleksandr@aleksandr-VirtualBox  ~  mkdir HW3
+ aleksandr@aleksandr-VirtualBox  ~  ls
+Desktop    Downloads  Music     Public  Templates
+Documents  HW3        Pictures  snap    Videos
+ aleksandr@aleksandr-VirtualBox  ~  cd HW3
+ aleksandr@aleksandr-VirtualBox  ~/HW3  git init
+Initialized empty Git repository in /home/aleksandr/HW3/.git/
+ aleksandr@aleksandr-VirtualBox  ~/HW3   master  git checkout -b dev
+Switched to a new branch 'dev'
+ aleksandr@aleksandr-VirtualBox  ~/HW3   dev  git status
+On branch dev
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3   dev  git clone git@github.com:malibu87/GL-BaseCamp-2020-HW3.git
+Cloning into 'GL-BaseCamp-2020-HW3'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+ aleksandr@aleksandr-VirtualBox  ~/HW3   dev  ls
+GL-BaseCamp-2020-HW3
+ aleksandr@aleksandr-VirtualBox  ~/HW3   dev  cd Gl_BaseCamp-2020-HW3 
+cd: no such file or directory: Gl_BaseCamp-2020-HW3
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3   dev  cd GL-BaseCamp-2020-HW3
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   main  git checkout -b dev
+Switched to a new branch 'dev'
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  mkdir f1/f2/f3/f4/f6
+mkdir: cannot create directory ‘f1/f2/f3/f4/f6’: No such file or directory
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  mkdir ~ f1/f2/f3/f4/f6
+mkdir: cannot create directory ‘/home/aleksandr’: File exists
+mkdir: cannot create directory ‘f1/f2/f3/f4/f6’: No such file or directory
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  mkdir ~f1/f2/f3/f4/f6
+zsh: no such user or named directory: f1
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  touch f1/f2/f3/f4/f6
+touch: cannot touch 'f1/f2/f3/f4/f6': No such file or directory
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  git status
+On branch dev
+nothing to commit, working tree clean
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  git commit -m 'initial commit'
+On branch dev
+nothing to commit, working tree clean
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  mkdir f1/f2/f3/f4/f5/f6
+mkdir: cannot create directory ‘f1/f2/f3/f4/f5/f6’: No such file or directory
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  mkdir -p f1/f2/f3/f4/f5/f6 
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  git status
+On branch dev
+nothing to commit, working tree clean
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  ls
+f1  README.md
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  cd f1
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  touch textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	./
+
+nothing added to commit but untracked files present (use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  ls
+f2  textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git commit 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1'
+error: pathspec 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1' did not match any file(s) known to git
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git commit 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1'git
+error: pathspec 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1git' did not match any file(s) known to git
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   textFile
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1'git
+error: pathspec 'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1git' did not match any file(s) known to git
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit -m  'creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1'git
+[dev 551676f] creating path ~f1/f2/f3/f4/f5/f6 and text-file in folder f1git
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1/textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git status
+On branch dev
+nothing to commit, working tree clean
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  cp -p textFile f2/f3/f4/f5/f6
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	f2/
+
+nothing added to commit but untracked files present (use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  rm f2/f3/f4/f5/f6/textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  vim textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   textFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  git commit -m 'creating textFile in f2 folder and filling him'
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   textFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   textFile
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit -m 'creating textFile in f2 folder and filling him'
+[dev 63ad5b5] creating textFile in f2 folder and filling him
+ 1 file changed, 1 insertion(+)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  cp -p textFile f2/f3/f4/f5/f6
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	f2/
+
+nothing added to commit but untracked files present (use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   f2/f3/f4/f5/f6/textFile
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit -m 'clonning textFile to the f6-folder'
+[dev 367b192] clonning textFile to the f6-folder
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f1/f2/f3/f4/f5/f6/textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  cd ~
+  aleksandr@aleksandr-VirtualBox  ~/Desktop  cd ~
+ aleksandr@aleksandr-VirtualBox  ~  find ~ -iname textFile
+/home/aleksandr/HW3/GL-BaseCamp-2020-HW3/f1/textFile
+/home/aleksandr/HW3/GL-BaseCamp-2020-HW3/f1/f2/f3/f4/f5/f6/textFile
+ aleksandr@aleksandr-VirtualBox  ~  rm 
+ ✘ aleksandr@aleksandr-VirtualBox  ~  rm /home/aleksandr/HW3/GL-BaseCamp-2020-HW3/f1/f2/f3/f4/f5/f6/textFile
+ aleksandr@aleksandr-VirtualBox  ~  
+ ✘ aleksandr@aleksandr-VirtualBox  ~  cd /home/aleksandr/HW3/GL-BaseCamp-2020-HW3/                                 
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ±  git status 
+On branch dev
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    f1/f2/f3/f4/f5/f6/textFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ±  git add .
+
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ✚  git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    f1/f2/f3/f4/f5/f6/textFile
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ✚  git commit -m 'navigate to home directory and find,delete f6/textFile'
+[dev 11d5e9d] navigate to home directory and find,delete f6/textFile
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 f1/f2/f3/f4/f5/f6/textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  
+
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  vim textFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  ls textFile non-exist-file 2> errors.log
+textFile
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  git status
+On branch dev
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   textFile
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	errors.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ±  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit -m 'redirect error only to errors.log'
+[dev 1e7962f] redirect error only to errors.log
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 f1/errors.log
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  ls textFile non-known-file > evrything.log 2>&1
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	evrything.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit 'redirect error and standart output to everything.log'
+error: pathspec 'redirect error and standart output to everything.log' did not match any file(s) known to git
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev ✚  git commit -m 'redirect error and standart output to everything.log'
+[dev 7e97f86] redirect error and standart output to everything.log
+ 1 file changed, 2 insertions(+)
+ create mode 100644 f1/evrything.log
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  
+  ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3/f1   dev  cd ../
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  ls
+f1  README.md
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  touch homework3
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  touch executableFile
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  su -
+Password: 
+su: Authentication failure
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  sudo passwd root
+New password: 
+Retype new password: 
+passwd: password updated successfully
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  ls -la
+total 32
+drwxrwxr-x 4 aleksandr aleksandr  4096 жов 31 19:59 .
+drwxrwxr-x 4 aleksandr aleksandr  4096 жов 31 16:55 ..
+-rw-rw-r-- 1 aleksandr aleksandr     0 жов 31 19:59 executableFile
+drwxrwxr-x 3 aleksandr aleksandr  4096 жов 31 19:24 f1
+drwxrwxr-x 8 aleksandr aleksandr  4096 жов 31 19:26 .git
+-rw-rw-r-- 1 aleksandr aleksandr 12058 жов 31 19:34 homework3
+-rw-rw-r-- 1 aleksandr aleksandr    29 жов 31 16:56 README.md
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  cmod +x executableFile
+zsh: command not found: cmod
+ ✘ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  chmod +x executableFile
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  ls -la
+total 32
+drwxrwxr-x 4 aleksandr aleksandr  4096 жов 31 19:59 .
+drwxrwxr-x 4 aleksandr aleksandr  4096 жов 31 16:55 ..
+-rwxrwxr-x 1 aleksandr aleksandr     0 жов 31 19:59 executableFile
+drwxrwxr-x 3 aleksandr aleksandr  4096 жов 31 19:24 f1
+drwxrwxr-x 8 aleksandr aleksandr  4096 жов 31 19:26 .git
+-rw-rw-r-- 1 aleksandr aleksandr 12058 жов 31 19:34 homework3
+-rw-rw-r-- 1 aleksandr aleksandr    29 жов 31 16:56 README.md
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  git status
+On branch dev
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	executableFile
+	homework3
+
+nothing added to commit but untracked files present (use "git add" to track)
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  git add .
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ✚  git status
+On branch dev
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   executableFile
+	new file:   homework3
+
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ✚  git commit -m 'create executableFile, change owner to root, add permission to execute file'
+[dev f2e482e] create executableFile, change owner to root, add permission to execute file
+ 2 files changed, 206 insertions(+)
+ create mode 100755 executableFile
+ create mode 100644 homework3
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  
+  aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev  cut unknownFile || touch ifCmd1FailsFileCreated
+cut: you must specify a list of bytes, characters, or fields
+Try 'cut --help' for more information.
+ aleksandr@aleksandr-VirtualBox  ~/HW3/GL-BaseCamp-2020-HW3   dev ± 
