@@ -1,0 +1,111 @@
+➜  GL-BaseCamp-2020-Nesterov git:(main) git pull origin
+Already up to date.
+➜  GL-BaseCamp-2020-Nesterov git:(main) git checkout -b hw1 
+Switched to a new branch 'hw1'
+➜  GL-BaseCamp-2020-Nesterov git:(hw1)  touch untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git add untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git status
+On branch hw1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   untrackedFile
+
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git commit -m 'Move untrackedFile to commit'
+[hw1 7afb595] Move untrackedFile to commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ls
+README.md  untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1)  nano untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ status
+zsh: command not found: status
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git status
+On branch hw1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   untrackedFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git add untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git commit -m 'commit which need reset'
+[hw1 a9e5aa0] commit which need reset
+ 1 file changed, 1 insertion(+)
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) git reset --soft HEAD^
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git status
+On branch hw1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   untrackedFile
+
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git reset HEAD untrackedFile
+Unstaged changes after reset:
+M	untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ status
+zsh: command not found: status
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git status                  
+On branch hw1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   untrackedFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ git checkout -b master
+Switched to a new branch 'master'
+➜  GL-BaseCamp-2020-Nesterov git:(master) ✗ git add .
+➜  GL-BaseCamp-2020-Nesterov git:(master) ✗ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   untrackedFile
+
+➜  GL-BaseCamp-2020-Nesterov git:(master) ✗ git commit -m 'initial commit'
+[master 96df4f2] initial commit
+ 1 file changed, 1 insertion(+)
+➜  GL-BaseCamp-2020-Nesterov git:(master) git checkout -b fromInitialCommitBranch
+Switched to a new branch 'fromInitialCommitBranch'
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) git reset --soft HEAD^
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git reset HEAD untrackedFile
+Unstaged changes after reset:
+M	untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git status
+On branch fromInitialCommitBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   untrackedFile
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git rm  --cached untrackedFile
+rm 'untrackedFile'
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git status
+On branch fromInitialCommitBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    untrackedFile
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	untrackedFile
+
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ touch .gitignore
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ ls
+README.md  untrackedFile
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ nano .gitignore
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git status
+On branch fromInitialCommitBranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	deleted:    untrackedFile
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.gitignore
+
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git checkout -b hw1
+fatal: A branch named 'hw1' already exists.
+➜  GL-BaseCamp-2020-Nesterov git:(fromInitialCommitBranch) ✗ git checkout  hw1
+D	untrackedFile
+Switched to branch 'hw1'
+➜  GL-BaseCamp-2020-Nesterov git:(hw1) ✗ touch homework1  
