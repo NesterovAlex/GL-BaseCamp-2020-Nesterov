@@ -2,39 +2,42 @@ package com.nesterov.selenium.pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import com.nesterov.selenium.configuration.GLCareersPageConfig;
 
+@SpringJUnitConfig(GLCareersPageConfig.class)
+@ExtendWith(SpringExtension.class)
 class GLCareersPageTest {
 
-	protected WebDriver driver;
-	private GLCareersPage careersPage;
+	private static GLCareersPage glCareersPage;
+
+	@Autowired
+	public void setGLCareersPage(GLCareersPage careersPage) {
+		GLCareersPageTest.glCareersPage = careersPage;
+	}
 
 	@BeforeEach
 	void setUp() throws Exception {
-		ChromeDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		careersPage = new GLCareersPage(driver);
-		careersPage.open();
-		careersPage = PageFactory.initElements(driver, GLCareersPage.class);
+		glCareersPage.open();
 	}
 
 	@Test
 	void givenHomePage_whenExecuteScenario_thenCurrentUrlReturned() {
-		careersPage.searchVacancy("QA");
-		careersPage.clickSearchButton();
-		careersPage.printFirstResult();
-		assertEquals("https://www.globallogic.com/ua/career-search-page/?keywords=QA&experience=&locations=&c=",
-				careersPage.getBrowser().getCurrentUrl());
+		String expected = "https://www.globallogic.com/ua/career-search-page/?keywords=QA&experience=&locations=&c=";
+		glCareersPage.searchVacancy("QA");
+		glCareersPage.clickSearchButton();
+		glCareersPage.printFirstResult();
+		assertEquals(expected, glCareersPage.getBrowser().getCurrentUrl());
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
-		driver.quit();
+	@AfterAll
+	static void tearDown() throws Exception {
+		glCareersPage.getDriver().quit();
 	}
 }

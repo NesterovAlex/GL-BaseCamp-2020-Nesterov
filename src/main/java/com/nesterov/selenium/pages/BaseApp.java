@@ -5,25 +5,56 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BaseApp {
 
-	public WebDriver browser;
-	public WebDriverWait driverWait;
+	private WebDriver browser;
+	private WebDriverWait webDriverWait;
 
-	public BaseApp(WebDriver browser) {
+	public BaseApp() {
+	}
+
+	public BaseApp(WebDriver browser, WebDriverWait webDriverWait) {
+		this.browser = browser;
+		this.webDriverWait = webDriverWait;
+
+	}
+
+	public WebDriver getBrowser() {
+		return browser;
+	}
+
+	public void setBrowser(WebDriver browser) {
 		this.browser = browser;
 	}
 
+	public WebDriverWait getWebDriverWait() {
+		return webDriverWait;
+	}
+
+	public void setWebDriverWait(WebDriverWait webDriverWait) {
+		this.webDriverWait = webDriverWait;
+	}
+
+	public void open(String url) {
+		browser.get(url);
+	}
+
 	public void click(By by) {
-		driverWait.until(ExpectedConditions.presenceOfElementLocated(by)).click();
+		webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).click();
 	}
 
 	public void sendKey(By by, String key) {
-		driverWait.until(ExpectedConditions.presenceOfElementLocated(by)).sendKeys(key);
+		webDriverWait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys(key);
 	}
-	
+
 	public WebElement find(By by) {
-		return driverWait.until(ExpectedConditions.presenceOfElementLocated(by));
+		return webDriverWait.until(ExpectedConditions.presenceOfElementLocated(by));
+	}
+
+	public void quit() {
+		browser.quit();
 	}
 }

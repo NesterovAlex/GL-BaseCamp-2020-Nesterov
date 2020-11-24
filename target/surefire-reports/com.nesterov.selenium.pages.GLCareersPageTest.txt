@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.nesterov.selenium.pages.GLCareersPageTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 45.946 sec <<< FAILURE! - in com.nesterov.selenium.pages.GLCareersPageTest
+givenHomePage_whenExecuteScenario_thenCurrentUrlReturned()  Time elapsed: 45.798 sec  <<< ERROR!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: element is not attached to the page document
+  (Session info: chrome=86.0.4240.198)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.0.0-alpha-6', revision: '5f43a29cfc'
+System info: host: 'ALEX', ip: '127.0.0.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.198, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: D:\Temp\scoped_dir6308_1394...}, goog:chromeOptions: {debuggerAddress: localhost:57913}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: a37634081a4433c8c8400e8a622ba98e
+	at com.nesterov.selenium.pages.GLCareersPageTest.givenHomePage_whenExecuteScenario_thenCurrentUrlReturned(GLCareersPageTest.java:29)
+

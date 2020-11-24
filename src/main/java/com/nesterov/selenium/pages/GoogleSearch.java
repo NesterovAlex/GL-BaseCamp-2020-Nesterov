@@ -2,18 +2,22 @@ package com.nesterov.selenium.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GoogleSearch {
 
-	public static final String URL = "https://www.google.com.ua/";
+	@Value(value = "${url}")
+	public String url;
 	
 	@FindBy(xpath = "//body/div[@id='viewport']/div[@id='searchform']/form[@id='tsf']/div[2]/div[1]/div[1]/div[1]/div[2]/input[1]")
 	private WebElement formInputSearch;
 	                  
-	@FindBy(xpath = "//body/div[@id='viewport']/div[@id='searchform']/form[@id='tsf']/div[2]/div[1]/div[2]/div[2]/div[2]/center[1]/input[1]")
+	@FindBy(xpath = "//body/div[@id='viewport']/div[@id='searchform']/form[@id='tsf']/div[2]/div[1]/div[3]/center[1]/input[1]")
 	private WebElement googleSearchButton;
 	
-	@FindBy(xpath = "//span[contains(text(),'selenium · PyPI')]")
+	@FindBy(xpath = "//span[contains(text(),'pip install selenium - PyPI')]")
 	private WebElement pyPILink;
 	
 	@FindBy(xpath = "//input[@id='search']")
@@ -49,4 +53,7 @@ public class GoogleSearch {
 		 seleniumAmazonLink.click();
 	}
 	
+	public String getUrl() {
+		return url;
+	}
 }

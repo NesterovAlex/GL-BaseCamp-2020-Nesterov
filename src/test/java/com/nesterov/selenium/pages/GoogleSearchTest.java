@@ -6,21 +6,27 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+import com.nesterov.selenium.configuration.GoogleSearchConfig;
+
+@SpringJUnitConfig(GoogleSearchConfig.class)
+@ExtendWith(SpringExtension.class)
 class GoogleSearchTest {
-
+	
+	@Autowired
 	protected WebDriver driver;
+	@Autowired
 	private GoogleSearch search;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		ChromeDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.get(GoogleSearch.URL);
+		driver.get(search.getUrl());
 		search = PageFactory.initElements(driver, GoogleSearch.class);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -39,10 +45,9 @@ class GoogleSearchTest {
 		String actual = driver.getTitle();
 		assertEquals(expected, actual);
 	}
-	
+
 	@AfterEach
 	void tearDown() throws Exception {
 		driver.quit();
 	}
-
 }

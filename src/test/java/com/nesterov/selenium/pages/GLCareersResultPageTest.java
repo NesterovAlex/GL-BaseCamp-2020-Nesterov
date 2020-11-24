@@ -2,39 +2,35 @@ package com.nesterov.selenium.pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import com.nesterov.selenium.configuration.GLCareersResultPageConfig;
 
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-
+@SpringJUnitConfig(GLCareersResultPageConfig.class)
+@ExtendWith(SpringExtension.class)
 class GLCareersResultPageTest {
 
-	private WebDriver driver;
-	private GLCareersResultPage careersPage;
+	private static GLCareersResultPage glCareersResultPage;
 
-	@BeforeEach
-	void setUp() throws Exception {
-		ChromeDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		careersPage = new GLCareersResultPage(driver);
-		careersPage = PageFactory.initElements(driver, GLCareersResultPage.class);
+	@Autowired
+	public void setGLCareersPage(GLCareersResultPage glCareersResultPage) {
+		GLCareersResultPageTest.glCareersResultPage = glCareersResultPage;
 	}
 
 	@Test
 	void givenExpectedUrl_whenOpen_thenReturnedCurrentUrl() {
 		String expected = "https://www.globallogic.com/ua/career-search-page/?keywords=QA&experience=&locations=&c=";
-		careersPage.open("QA");
-		careersPage.getFirstResult();
-		assertEquals(expected, driver.getCurrentUrl());
+		glCareersResultPage.open("QA");
+		glCareersResultPage.getFirstResult();
+		assertEquals(expected, glCareersResultPage.getDriver().getCurrentUrl());
 	}
 
-	@AfterEach
-	void tearDown() throws Exception {
-		driver.quit();
+	@AfterAll
+	static void tearDown() throws Exception {
+		glCareersResultPage.getDriver().quit();
 	}
-
 }

@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.nesterov.selenium.pages.GoogleSearchTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.211 sec <<< FAILURE! - in com.nesterov.selenium.pages.GoogleSearchTest
+givenGooglSearchScenario_whenExecuteScenario_thenExpectedPageTitleReturned()  Time elapsed: 0 sec  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'GLCareersResultPage' defined in file [D:\HW3\GL-BaseCamp-2020-Nesterov\target\classes\com\nesterov\selenium\pages\GLCareersResultPage.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.openqa.selenium.WebDriver' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'org.openqa.selenium.WebDriver' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+
