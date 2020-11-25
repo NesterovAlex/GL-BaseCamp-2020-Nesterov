@@ -1,6 +1,7 @@
 package com.nesterov.selenium.pages;
 
-import java.util.Properties;
+import static com.nesterov.selenium.configuration.PageConfig.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -9,18 +10,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class GLCareersPage extends BaseApp {
 
-	private static final Properties PROPERTIES = ResourceReader.readFile("gl_careers_page.properties");
-	private static final By SEARCHFIELD = By.xpath(PROPERTIES.getProperty("SEARCH_FIELD"));
-	private static final By SEARCH_BUTTON = By.xpath(PROPERTIES.getProperty("SEARC_BUTTON_PATH"));
-	private static final By ALLOW_COOKIE_BUTTON = By.xpath(PROPERTIES.getProperty("ALLOW_COOKIE_BUTTON_PATH"));
-	private static final By FIRST_RESULT_ELEMENT = By.xpath(PROPERTIES.getProperty("FIRST_RESULT_ELEMENT_PATH"));
+	private static final By SEARCHFIELD = By.xpath("//body/div[@id='main']/section[@id='hero']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]");
+	private static final By SEARCH_BUTTON = By.xpath("//body/div[@id='main']/section[@id='hero']/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/form[1]/div[1]/button[1]");
+	private static final By ALLOW_COOKIE_BUTTON = By.xpath("//a[@id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']");
+	private static final By FIRST_RESULT_ELEMENT = By.xpath("//body/div[@id='main']/section[@id='carersearchpage']/div[2]/div[1]/div[3]/div[2]/a[1]/div[1]/div[1]");
 
 	public GLCareersPage(WebDriver browser, WebDriverWait webDriverWait) {
 		super(browser, webDriverWait);
 	}
 
 	public void open() {
-		open(PROPERTIES.getProperty("URL"));
+		open(GL_CAREERS_PAGE);
 		clickallowCoockysButton();
 	}
 
