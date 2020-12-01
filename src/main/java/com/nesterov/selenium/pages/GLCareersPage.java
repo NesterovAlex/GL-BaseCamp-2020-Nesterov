@@ -1,6 +1,6 @@
 package com.nesterov.selenium.pages;
 
-import static com.nesterov.selenium.configuration.PageConfig.*;
+import static com.nesterov.config.PageConfig.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,5 +42,9 @@ public class GLCareersPage extends BaseApp {
 	
 	public WebDriver getDriver() {
 		return getBrowser();
+	}
+	
+	public WebDriver getWebDriver() {
+		return super.getBrowser();
 	}
 }

@@ -25,7 +25,7 @@ class GoogleSearchTest {
 	private GoogleSearch search;
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
 		driver.get(search.getUrl());
 		search = PageFactory.initElements(driver, GoogleSearch.class);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -47,7 +47,7 @@ class GoogleSearchTest {
 	}
 
 	@AfterEach
-	void tearDown() throws Exception {
+	void tearDown() {
 		driver.quit();
 	}
 }

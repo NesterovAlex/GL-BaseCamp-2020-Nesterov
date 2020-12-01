@@ -1,4 +1,4 @@
-package com.nesterov.selenium.configuration;
+package com.nesterov.config;
 
 public class PageConfig {
 

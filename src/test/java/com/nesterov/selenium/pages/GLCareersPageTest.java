@@ -2,28 +2,28 @@ package com.nesterov.selenium.pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
-import com.nesterov.selenium.configuration.GLCareersPageConfig;
+import com.nesterov.selenium.configuration.SpringConfig;
 
-@SpringJUnitConfig(GLCareersPageConfig.class)
+@SpringJUnitConfig(SpringConfig.class)
 @ExtendWith(SpringExtension.class)
 class GLCareersPageTest {
 
-	private static GLCareersPage glCareersPage;
+	private  GLCareersPage glCareersPage;
 
 	@Autowired
 	public void setGLCareersPage(GLCareersPage careersPage) {
-		GLCareersPageTest.glCareersPage = careersPage;
+		glCareersPage = careersPage;
 	}
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
 		glCareersPage.open();
 	}
 
@@ -36,8 +36,8 @@ class GLCareersPageTest {
 		assertEquals(expected, glCareersPage.getBrowser().getCurrentUrl());
 	}
 
-	@AfterAll
-	static void tearDown() throws Exception {
-		glCareersPage.getDriver().quit();
+	@AfterEach
+	 void tearDown() {
+		glCareersPage.getBrowser().quit();
 	}
 }

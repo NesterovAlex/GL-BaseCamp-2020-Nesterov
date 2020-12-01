@@ -2,7 +2,7 @@ package com.nesterov.selenium.pages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,11 @@ import com.nesterov.selenium.configuration.GLCareersResultPageConfig;
 @ExtendWith(SpringExtension.class)
 class GLCareersResultPageTest {
 
-	private static GLCareersResultPage glCareersResultPage;
+	private GLCareersResultPage glCareersResultPage;
 
 	@Autowired
 	public void setGLCareersPage(GLCareersResultPage glCareersResultPage) {
-		GLCareersResultPageTest.glCareersResultPage = glCareersResultPage;
+		this.glCareersResultPage = glCareersResultPage;
 	}
 
 	@Test
@@ -29,8 +29,8 @@ class GLCareersResultPageTest {
 		assertEquals(expected, glCareersResultPage.getDriver().getCurrentUrl());
 	}
 
-	@AfterAll
-	static void tearDown() throws Exception {
+	@AfterEach
+	void tearDown() {
 		glCareersResultPage.getDriver().quit();
 	}
 }

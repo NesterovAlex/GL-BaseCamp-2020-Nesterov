@@ -1,6 +1,6 @@
 package com.nesterov.selenium.pages;
 
-import static com.nesterov.selenium.configuration.PageConfig.*;
+import static com.nesterov.config.PageConfig.*;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
